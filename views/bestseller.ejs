@@ -1,0 +1,22 @@
+<%- include("header.ejs") %>
+<div class="popular">
+    <h1 id='main-heading'>What's the Public reading?</h1>
+    <h2 id="sub-heading">Explore the bestsellers across the globe</h2>
+</div>
+<div class="bestsellerbooks">
+    <%for(var i=0;i<locals.bestseller.length;i++){%>
+        <div class="test">
+            <div class="imagee">
+                <%if(locals.bestseller[i].pics != "Not available"){%>
+                    <h2><img width="250" height="350" src=<%=locals.bestseller[i].pics%>/></h2>
+                <%}%>
+                
+            </div>
+            
+            <h2 class="bsbookname"><%=locals.bestseller[i].title%></h2>
+            <h3 class="bsbookauthor"><%=locals.bestseller[i].author%></h3>
+            <h3 class="bsdescription"><%=locals.bestseller[i].description%></h3>
+        </div>
+    <%}%>
+</div>
+<%- include("footer.ejs") %>

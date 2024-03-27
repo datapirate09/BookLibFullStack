@@ -1,0 +1,67 @@
+<%- include("header.ejs") %>
+<script>
+    let currentRating = 0;
+
+    function setRating(rating) {
+        currentRating = rating;
+        updateStars();
+    }
+
+    function updateStars() {
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('ratingInput');
+
+        stars.forEach((star, index) => {
+            if (index < currentRating) {
+                star.classList.add('clicked');
+            } else {
+                star.classList.remove('clicked');
+            }
+        });
+
+        // Update the value of the hidden input field
+        ratingInput.value = currentRating;
+    }
+</script>
+<div class="formpage">
+    <h1 id="formhead">Add a Book to Your Library</h1>
+    <h2 class="formsubhead"><%=locals.quote%></h2>
+    <h3 class="formsubhead">-<%=locals.quoteAuth%></h3>
+</div>
+<div class="form">
+    <h3 style="font-size: 2.5rem; text-align: center;">Keep a track of what you read</h3>
+    <form action="<%= locals.edit ? `/edit/post/${locals.edit.userbookid}` : '/bookdata' %>" method="POST">
+        <div class="info"><label for="title">Enter Book Title</label></div>
+        <%if (locals.edit){%>
+            <div class="info"><input type="text" name="booktitle" readonly value="<%=locals.edit.userbooktitle%>" required></div>
+        <%} else{%>
+            <div class="info"><input type="text" name="booktitle" required></div>
+        <%}%>
+        <div class="info"><label for="author">Enter Name of Author</label></div>
+        <%if (locals.edit){%>
+            <div class="info"><input type="text" name="authorname" readonly value="<%=locals.edit.userbookauthor%>" required></div>
+        <%} else{%>
+            <div class="info"><input type="text" name="authorname" required></div>
+        <%}%> 
+        <div class="info"><label for="summary">Lets write about the book</label></div>
+        <%if (locals.edit){%>
+            <div class="info"><textarea id="message" name="message" rows="8" cols="100" style="text-decoration: none; resize: none;"><%=locals.edit.userbookdes%></textarea></div>
+        <%} else{%>
+            <div class="info"><textarea id="message" name="message" rows="8" cols="100" style="text-decoration: none; resize: none;"></textarea></div>
+        <%}%> 
+        <div class="info"><label for="rating">Rate the Book</label></div>
+        <input type="hidden" id="ratingInput" name="rating" value="0">
+        <div class="star-container" id="star-rating">
+            <span class="star" onclick="setRating(1)">★</span>
+            <span class="star" onclick="setRating(2)">★</span>
+            <span class="star" onclick="setRating(3)">★</span>
+            <span class="star" onclick="setRating(4)">★</span>
+            <span class="star" onclick="setRating(5)">★</span>
+        </div>
+        <div class="info"><input type="submit" value="Submit"></div>
+    </form>
+</div>
+<%- include("footer.ejs") %>
+
+
+

@@ -1,0 +1,38 @@
+<%- include("header.ejs") %>
+
+<div class="userlibraryhead">
+    <h1 id="libhead">Your Library</h1>
+    <h2 id="libsubhead">Scroll down to revisit all the books that you read back in the day</h2>
+</div>
+<div class="user-collection">
+    <%for(var i=0;i<locals.data.length;i++){%>
+        <div class="userbookdata">
+            <div class="imageuserbook">
+                <%if(locals.data[i].userbookpic != "Not available"){%>
+                    <h2><img width="250" height="350" src=<%=locals.data[i].userbookpic%>/></h2>
+                <%}%>
+                
+            </div>
+            
+            <h2 class="bsbookname" style="font-size: 2.5rem;"><%=locals.data[i].userbooktitle%></h2>
+            <h3 class="bsbookauthor" style="font: 2rem;">-<%=locals.data[i].userbookauthor%></h3>
+            <h3 class="bsdescription" style="font-size: 1.4rem;"><%=locals.data[i].userbookdes%></h3>
+            <div class="stars" id="userstar">
+                <%for(var j=1;j<=5;j++){%>
+                    <%if (j <= locals.data[i].userbookrating){%>
+                        <span class="userstars glow" id="star1">★</span>
+                    <%} else{%>
+                        <span class="userstars" id="star1">★</span>
+                    <%}%>
+    
+                <%}%>
+            </div>
+            <div class="alter">
+                <button style="width: 80px; height: 40px; border-style: none; background-color: green; color: white; border-radius: 5px;"><a href="/edit/<%=locals.data[i].userbookid %>" style="text-decoration: none; color: white;">Edit</a></button>
+                <button style="width: 80px; height: 40px; border-style: none; background-color: green; color: white; border-radius: 5px;"><a href="/delete/<%=locals.data[i].userbookid %>" style="text-decoration: none; color: white;">Delete</a></button>
+            </div>
+            
+        </div>
+    <%}%>
+</div>
+<%- include("footer.ejs") %>

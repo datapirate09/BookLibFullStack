@@ -1,0 +1,204 @@
+body{
+    background-color: #CD8D7A;
+    padding: 0px;
+    margin: 0px;
+}
+.mainpage{
+    background-color: #FFECD6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px;
+    padding-bottom: 200px;
+}
+#main-heading{
+    font-family: 'Rubik Doodle Shadow';
+    font-size: 6rem;
+    text-align: center;
+}
+#sub-heading{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 4rem;
+}
+.about{
+    background-color: #750E21;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+.about-content{
+    text-align: center;
+}
+#about-heading{
+    font-family: 'Rubik Doodle Shadow';
+    
+    font-size: 6rem;
+}
+
+#aboutpara{
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.6rem;
+}
+#about-purpose{
+    font-size: 1.4rem;
+}
+#addbook{
+    background-color: forestgreen;
+    color: beige;
+    text-align: center;
+    width: 140px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+}
+.popular{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px;
+    padding-bottom: 200px;
+    background-color: #FFECD6;
+}
+.test{
+    display: grid;
+    grid-template-rows: 50px 50px 200px;
+    grid-template-columns: 500px auto;
+    padding-right: 30px;
+    padding-left: 50px;
+    padding-bottom: 40px;
+    width: 100%;
+    
+}
+.imagee{
+    grid-row: span 3;
+}
+.bsbookname{
+    text-align: center;
+    font-size: 1.8rem;
+}
+.bsdescription{
+    font-size: 1rem;
+    text-align: center;
+}
+.bsbookauthor{
+    font-size: 1.4rem;
+    text-align: center;
+}
+.bestsellerbooks{
+    padding-top: 25px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 300px;
+    background-color: #F6F7C4;
+}
+.formpage{
+    background-color: #FFECD6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+#formhead{
+    font-size: 5rem;
+    text-align: center;
+    font-family: 'Rubik Doodle Shadow';
+}
+.formsubhead{
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+}
+.form{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: #BF3131;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+.info{
+    padding: 10px;
+}
+.star-container {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.star {
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star:hover,
+.star.clicked {
+    color: gold;
+}
+.userlibraryhead{
+    padding-top: 100px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFECD6;
+    text-align: center;
+    gap: 30px;
+}
+#libhead{
+    font-family: 'Rubik Doodle Shadow';
+    font-size: 6rem;
+}
+#libsubhead{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 4rem;
+}
+.user-collection{
+    background-color: #7D0A0A;
+    color: white;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.glow{
+    color: gold;
+}
+.stars{
+    text-align: center;
+    font-size: 2.5rem;
+}
+.userbookdata{
+    display: grid;
+    grid-template-rows: 50px 50px 200px 50px 80px;
+    grid-template-columns: 500px auto;
+    padding-right: 30px;
+    padding-left: 50px;
+    padding-bottom: 40px;
+    width: 100%;
+}
+.imageuserbook{
+    grid-row: span 5;
+}
+.alter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
